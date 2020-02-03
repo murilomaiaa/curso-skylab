@@ -14,7 +14,7 @@ mongoose.connect(
 requireDir('./src/models')
 
 
-// Primeira rota
+// Rotas
 app.use('/api', require('./src/routes'))
 
 app.listen(3001)
