@@ -12,17 +12,8 @@ mongoose.connect(
 )
 requireDir('./src/models')
 
-const Product = mongoose.model('Product')
 
 // Primeira rota
-app.get('/', (req, res) => {
-  Product.create({
-    title: 'NodeJs ',
-    description: "Javascript rodando no back",
-    url: 'https://node.org'
-  })
-
-  return res.send('hello world')
-})
+app.use('/api', require('./src/routes'))
 
 app.listen(3001)
